@@ -10,5 +10,4 @@ public class EmployeeManagementSystemApplication {
 		SpringApplication.run(EmployeeManagementSystemApplication.class, args);
 		System.out.println("Application Started Successfully");
 	}
-
 }

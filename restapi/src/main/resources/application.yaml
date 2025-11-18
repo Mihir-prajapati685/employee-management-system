@@ -1,0 +1,43 @@
+# =============================
+# Project general information we can use in the app with using @value("${appname}")
+# =============================
+appname: employee-management-system
+
+# =============================
+# Custom metadata section
+# =============================
+md:
+  security:
+    profile: dev  # Current environment: dev, pilot, prod
+    enableAuth: true  # Custom flag to enable/disable authentication
+
+# =============================
+# Server configuration
+# =============================
+server:
+  port: 8080  # Port the Spring Boot app will run on
+
+# =============================
+# Spring DataSource configuration
+# =============================
+spring:
+  datasource:
+    # JDBC URL to connect to MySQL database
+    url: jdbc:mysql://localhost:3306/employee_management_system_db
+    # Database username
+    username: root
+    # Database password
+    password: 4687
+    # JDBC driver for MySQL
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#  # =============================
+#  # JPA / Hibernate configuration
+#  # =============================
+#  jpa:
+#    hibernate:
+#      ddl-auto: update  # Auto-update DB schema; other options: create, validate, none
+#    show-sql: true       # Show SQL queries in console
+#    properties:
+#      hibernate:
+#        format_sql: true  # Pretty format for SQL logs
