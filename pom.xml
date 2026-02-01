@@ -28,7 +28,9 @@
 		<module>security</module>
 		<module>useraccess</module>
         <module>employee</module>
-    </modules>
+        <module>domain</module>
+		<module>user</module>
+	</modules>
     <scm>
 		<connection/>
 		<developerConnection/>
