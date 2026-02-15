@@ -1,0 +1,28 @@
+name: Sync Pilot to Main
+
+on:
+  push:
+    branches:
+      - pilot
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout pilot branch
+        uses: actions/checkout@v4
+        with:
+          ref: pilot
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+      - name: Merge pilot into main
+        run: |
+          git checkout main
+          git merge pilot --no-ff -m "Auto merge pilot → main"
+          git push origin main
