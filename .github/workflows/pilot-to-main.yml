@@ -3,7 +3,7 @@ name: Sync Pilot to Main
 on:
   push:
     branches:
-      - pilot
+      - release/pilot
 
 jobs:
   sync:
