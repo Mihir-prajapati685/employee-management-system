@@ -15,7 +15,7 @@ md:
 # Server configuration
 # =============================
 server:
-  port: 8080  # Port the Spring Boot app will run on
+  port: 8086  # Port the Spring Boot app will run on
 
 # =============================
 # Spring DataSource configuration
@@ -41,3 +41,7 @@ spring:
 #    properties:
 #      hibernate:
 #        format_sql: true  # Pretty format for SQL logs
+#  security:
+#    user:
+#      name: admin # Default username for Spring Security
+#      password: admin123 # Default password for Spring Security
