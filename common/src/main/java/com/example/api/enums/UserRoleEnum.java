@@ -1,6 +1,4 @@
-package com.example.common.enums;
-
-import org.apache.catalina.User;
+package com.example.api.enums;
 
 import java.util.HashMap;
 import java.util.Map;
