@@ -1,16 +1,16 @@
 package com.example.data;
 
-import com.example.database.mapper.EmployeeModelMapper;
-import com.example.database.model.EmployeeModel;
-import com.example.utils.DBUtils;
-import com.example.utils.DateUtils;
+import com.example.api.database.mapper.EmployeeModelMapper;
+import com.example.api.database.model.EmployeeModel;
+import com.example.api.utils.DBUtils;
+import com.example.api.utils.DateUtils;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-import static com.example.database.mapper.EmployeeModelDynamicSqlSupport.employeeModel;
+import static com.example.api.database.mapper.EmployeeModelDynamicSqlSupport.employeeModel;
 import static org.mybatis.dynamic.sql.SqlBuilder.isEqualTo;
 
 @Repository

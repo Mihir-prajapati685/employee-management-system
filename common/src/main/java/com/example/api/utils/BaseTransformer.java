@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.example.api.utils;
 
 import java.util.List;
 import java.util.Objects;

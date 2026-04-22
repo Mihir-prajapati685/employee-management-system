@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.example.api.utils;
 
 import org.mybatis.dynamic.sql.SqlBuilder;
 import org.mybatis.dynamic.sql.where.condition.IsGreaterThan;

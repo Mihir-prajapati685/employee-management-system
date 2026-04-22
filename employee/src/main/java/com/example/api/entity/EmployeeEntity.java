@@ -1,9 +1,9 @@
 package com.example.api.entity;
 
-import com.example.common.enums.DepartmentEnum;
-import com.example.common.enums.GenderEnum;
-import com.example.common.enums.UserRoleEnum;
-import com.example.common.enums.UserStatusEnum;
+import com.example.api.enums.DepartmentEnum;
+import com.example.api.enums.GenderEnum;
+import com.example.api.enums.UserRoleEnum;
+import com.example.api.enums.UserStatusEnum;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
