@@ -1,8 +1,8 @@
 package com.example.data;
 
-import com.example.database.mapper.UserModelDynamicSqlSupport;
-import com.example.database.mapper.UserModelMapper;
-import com.example.database.model.UserModel;
+import com.example.api.database.mapper.UserModelDynamicSqlSupport;
+import com.example.api.database.mapper.UserModelMapper;
+import com.example.api.database.model.UserModel;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
