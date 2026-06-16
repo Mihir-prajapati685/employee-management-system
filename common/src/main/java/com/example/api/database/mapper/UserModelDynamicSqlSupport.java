@@ -1,4 +1,4 @@
-package com.example.database.mapper;
+package com.example.api.database.mapper;
 
 import jakarta.annotation.Generated;
 import java.sql.JDBCType;

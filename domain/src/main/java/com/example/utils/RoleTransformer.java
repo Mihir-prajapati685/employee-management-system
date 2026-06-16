@@ -1,7 +1,7 @@
 package com.example.utils;
 
 import com.example.api.entity.RoleEntity;
-import com.example.database.model.RoleModel;
+import com.example.api.database.model.RoleModel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 

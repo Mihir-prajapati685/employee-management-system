@@ -28,7 +28,7 @@ public class EmployeeControllerV1 {
         this.employeeServiceV1 = employeeServiceV1;
     }
 
-    @GetMapping("/{employeeId}")
+    @GetMapping("/public/{employeeId}")
     public ResponseEntity<EmployeeEntity> getEmployeeById(
             @PathVariable Integer employeeId) {
 
@@ -36,19 +36,19 @@ public class EmployeeControllerV1 {
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/secure/all")
     public ResponseEntity<List<EmployeeEntity>> getAllEmployees() {
         List<EmployeeEntity> employees = employeeServiceV1.getAllEmployees();
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
-    @PostMapping("/create/by-admin")
+    @PostMapping("/secure/create/by-admin")
     public ResponseEntity<EmployeeEntity> createEmployeeByAdmin(@Valid @RequestBody EmployeeEntity employeeEntity) {
         EmployeeEntity createdEmployee = employeeServiceV1.createEmployeeByAdmin(employeeEntity);
         return new ResponseEntity<>(createdEmployee, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update/by-admin/{employeeId}")
+    @PutMapping("/secure/update/by-admin/{employeeId}")
     public ResponseEntity<EmployeeEntity> updateEmployeeByAdmin(
             @PathVariable Integer employeeId,
             @RequestBody EmployeeEntity employeeEntity
@@ -57,7 +57,7 @@ public class EmployeeControllerV1 {
         return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/by-admin/{employeeId}")
+    @DeleteMapping("/secure/delete/by-admin/{employeeId}")
     public ResponseEntity<EmployeeEntity> softDeleteEmployeeByAdmin(
             @PathVariable Integer employeeId
     ) {

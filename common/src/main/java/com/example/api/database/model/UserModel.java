@@ -1,4 +1,4 @@
-package com.example.database.model;
+package com.example.api.database.model;
 
 import jakarta.annotation.Generated;
 import java.util.Date;

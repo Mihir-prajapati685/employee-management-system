@@ -1,13 +1,13 @@
-package com.example.employee_management_system;
+package com.example.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class EmployeeManagementSystemApplication {
+@SpringBootApplication(scanBasePackages = "com.example")
+public class MainRestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EmployeeManagementSystemApplication.class, args);
+		SpringApplication.run(MainRestApplication.class, args);
 		System.out.println("Application Started Successfully");
 	}
 }
