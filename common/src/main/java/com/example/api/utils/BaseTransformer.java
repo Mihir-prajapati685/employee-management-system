@@ -1,9 +1,11 @@
-package com.example.utils;
+package com.example.api.utils;
+
+import org.springframework.beans.BeanUtils;
 
 import java.util.List;
 import java.util.Objects;
 
-public class BaseTransformer<E,M> {
+public class BaseTransformer<E, M> {
 
     private final Class<E> entityClass;
     private final Class<M> modelClass;
@@ -14,25 +16,27 @@ public class BaseTransformer<E,M> {
     }
 
     public M toModel(E entity) {
-        if(Objects.isNull(entity)){
+        if (Objects.isNull(entity)) {
             return null;
         }
-        try{
+        try {
             M model = modelClass.getDeclaredConstructor().newInstance();
+            BeanUtils.copyProperties(entity, model);
             return model;
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException("Error converting entity to model", e);
         }
     }
 
     public E toEntity(M model) {
-        if(Objects.isNull(model)){
+        if (Objects.isNull(model)) {
             return null;
         }
-        try{
+        try {
             E entity = entityClass.getDeclaredConstructor().newInstance();
+            BeanUtils.copyProperties(model, entity);
             return entity;
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException("Error converting model to entity", e);
         }
     }

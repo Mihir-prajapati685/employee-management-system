@@ -1,10 +1,11 @@
 package com.example.api.entity;
 
-import com.example.common.enums.DepartmentEnum;
-import com.example.common.enums.GenderEnum;
-import com.example.common.enums.UserRoleEnum;
-import com.example.common.enums.UserStatusEnum;
+import com.example.api.enums.DepartmentEnum;
+import com.example.api.enums.GenderEnum;
+import com.example.api.enums.UserRoleEnum;
+import com.example.api.enums.UserStatusEnum;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.util.Date;
@@ -21,14 +22,14 @@ public class EmployeeEntity {
     private String employeePhoneNumber;
     @NotBlank(message = "Address cannot be blank")
     private String employeeAddress;
-    @NotBlank(message = "Gender cannot be blank")
+    @NotNull(message = "Gender cannot be blank")
     private GenderEnum gender;
-    @NotBlank(message = "Date of birth cannot be blank")
+    @NotNull(message = "Date of birth cannot be blank")
     private Date dateOfBirth;
     private String profilePictureUrl;
-    @NotBlank(message = "Role cannot be blank")
+    @NotNull
     private UserRoleEnum employeeRole;
-    @NotBlank(message = "Department cannot be blank")
+    @NotNull(message = "Department cannot be blank")
     private DepartmentEnum department;
     private UserStatusEnum employeeStatus;
     private UserEntity userDetails;

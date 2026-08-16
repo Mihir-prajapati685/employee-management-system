@@ -24,7 +24,10 @@ public class EmployeeServiceV1 {
     }
 
     public EmployeeEntity createEmployeeByAdmin(@Valid EmployeeEntity employeeEntity) {
-        UserEntity userEntity = employeeEntity.getUserDetails();
+
+        UserEntity userEntity = new UserEntity();
+        userEntity.setEmail(employeeEntity.getUserDetails().getEmail());
+        userEntity.setPhoneNumber(employeeEntity.getEmployeePhoneNumber());
 
         UserEntity user = userService.checkIfUserIsExists(userEntity);
 
@@ -36,5 +39,30 @@ public class EmployeeServiceV1 {
 
     public List<EmployeeEntity> getAllEmployees() {
         return employeeTransformer.toEntitList(employeeDAO.getAllEmployee());
+    }
+
+    public EmployeeEntity getEmployeeById(Integer employeeId) {
+
+        EmployeeEntity employeeEntity = employeeTransformer.toEntity(employeeDAO.getEmployeeById(employeeId).orElse(null));
+        if (Objects.isNull(employeeEntity)){
+            throw new RuntimeException("Employee is not found for this id");
+        }
+        return employeeEntity;
+    }
+
+    public EmployeeEntity updateEmployeeByAdmin(Integer employeeId, @Valid EmployeeEntity employeeEntity) {
+
+        EmployeeEntity existingEmployee = getEmployeeById(employeeId);
+
+        if (Objects.isNull(existingEmployee)){
+            throw new RuntimeException("Employee is not found for this id");
+        }
+
+        employeeEntity.setEmployeeId(employeeId);
+        return employeeTransformer.toEntity(employeeDAO.updateEmployeeByAdmin(employeeTransformer.toModel(employeeEntity)));
+    }
+
+    public EmployeeEntity softDeleteEmployeeByAdmin(Integer employeeId) {
+        return employeeTransformer.toEntity(employeeDAO.softDeleteEmployeeByAdmin(employeeId));
     }
 }

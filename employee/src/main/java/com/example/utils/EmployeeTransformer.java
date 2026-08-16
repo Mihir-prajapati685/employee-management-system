@@ -1,7 +1,7 @@
 package com.example.utils;
 
 import com.example.api.entity.EmployeeEntity;
-import com.example.database.model.EmployeeModel;
+import com.example.api.database.model.EmployeeModel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 

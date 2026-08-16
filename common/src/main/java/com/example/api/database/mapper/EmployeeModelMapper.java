@@ -1,9 +1,9 @@
-package com.example.database.mapper;
+package com.example.api.database.mapper;
 
-import static com.example.database.mapper.EmployeeModelDynamicSqlSupport.*;
+import static com.example.api.database.mapper.EmployeeModelDynamicSqlSupport.*;
 import static org.mybatis.dynamic.sql.SqlBuilder.isEqualTo;
 
-import com.example.database.model.EmployeeModel;
+import com.example.api.database.model.EmployeeModel;
 import jakarta.annotation.Generated;
 import java.util.List;
 import java.util.Optional;
